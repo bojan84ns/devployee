@@ -5,13 +5,9 @@ bookings.controller('BookingController', function($scope, $http) {
 	$scope.startDate = {};
 	$scope.endDate = {};
 	$scope.bookings = [];
-
-	$scope.getBookings = function() {
-		
-	};
 	
 	$scope.searchBookings = function() {
-		$http.post('api/bookings/search')
+		$http.post('booking/booking_search', {'startDate' : $scope.startDate, 'EndDate' : $scope.endDate})
 			.success(function(data) {
 				$scope.bookings = data;
 			})
@@ -20,10 +16,10 @@ bookings.controller('BookingController', function($scope, $http) {
 			});
 	
 		
-		$scope.bookings = [{id: 1, start: '01.10.2015', end: '10.10.2015', guests: 3},
-						   {id: 2, start: '07.11.2015', end: '09.11.2015', guests: 1},
-						   {id: 3, start: '19.09.2015', end: '28.09.2015', guests: 2},
-						   {id: 4, start: '30.11.2015', end: '05.12.2015', guests: 5}];
+		//$scope.bookings = [{id: 1, start: '01.10.2015', end: '10.10.2015', guests: 3},
+		//				   {id: 2, start: '07.11.2015', end: '09.11.2015', guests: 1},
+		//				   {id: 3, start: '19.09.2015', end: '28.09.2015', guests: 2},
+		//				   {id: 4, start: '30.11.2015', end: '05.12.2015', guests: 5}];
 	};
 });
 
