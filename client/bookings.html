@@ -1,0 +1,42 @@
+<table class="table table-bordered" ng-init="getBookings()">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Start</th>
+			<th>End</th>
+			<th>Number of guests</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="booking in bookings">
+			<td>{{ booking.id }}</td>
+			<td>{{ booking.start }}</td>
+			<td>{{ booking.end }}</td>
+			<td>{{ booking.guests }}</td>
+		</tr>
+	</tbody>
+</table>
+
+<form>
+	<table style="border:4px">
+		<tbody>
+			<tr align="left">
+				<td>Start date:</td>
+				<td>
+					<input type="date" name="startDate" id="startDate" ng-model="startDate.value"/>
+				</td>
+			</tr>
+			<tr align="left">
+				<td>End date:</td>
+				<td>
+					<input type="date" name="endDate" id="endDate" ng-model="endDate.value"/>
+				</td>
+			</tr>
+			<tr align="left">
+				<td colspan="2" align="right">
+					<input type="submit" name="search" value="Search" ng-click="searchBookings()"/>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>

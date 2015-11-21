@@ -3,30 +3,28 @@
     "loopback#favicon": {}
   },
   "initial": {
-    "compression": {},
-    "cors": {
-      "params": {
-        "origin": true,
-        "credentials": true,
-        "maxAge": 86400
-      }
-    }
+    "compression": {}
   },
-  "session": {},
-  "auth": {},
-  "parse": {},
+  "session": {
+  },
+  "auth": {
+  },
+  "parse": {
+  },
   "routes": {
-    "loopback#rest": {
-      "paths": [
-        "${restApiRoot}"
-      ]
+    "loopback#status": {
+      "paths": "/status"
     }
   },
-  "files": {},
+  "files": {
+    "loopback#static": {
+      "params": "$!../client"
+    }
+  },
   "final": {
     "loopback#urlNotFound": {}
   },
   "final:after": {
-    "loopback#errorHandler": {}
+    "errorhandler": {}
   }
 }
